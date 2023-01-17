@@ -1,0 +1,204 @@
+#Reading excel files
+df1 = pd.read_excel('/content/QNB_Oturumu_Katılım_Formu2022-12-17_02_39_43.xlsx')
+df2 = pd.read_excel('/content/SOCAR_Oturumu_Katılım_Formu2022-12-17_03_26_41.xlsx')
+df3 = pd.read_excel('/content/Nestlé_Oturumu_Katılım_Formu2022-12-17_04_32_11.xlsx')
+df4 = pd.read_excel('/content/AK_GIDA_Oturumu_Katılım_Formu2022-12-17_05_30_45.xlsx')
+df5 = pd.read_excel('/content/ETİ_Oturumu_Katılım_Formu2022-12-17_07_27_44.xlsx')
+df6 = pd.read_excel('/content/Henkel_Oturumu_Katılım_Formu2022-12-17_08_35_42.xlsx')
+df7 = pd.read_excel('/content/P&G_Oturumu_2022-12-17_09_42_19.xlsx')
+df8 = pd.read_excel('/content/Erişilebilir_Her_Şey_Oturumu_2022-12-17_10_19_02.xlsx')
+df9 = pd.read_excel('/content/Unilever_Oturumu_Katılım_Form2022-12-18_01_59_52.xlsx')
+df10 = pd.read_excel('/content/Bosch_Oturumu_Katılım_Formu2022-12-18_02_48_21.xlsx')
+df11 = pd.read_excel('/content/TUSAŞ_Oturumu_Katılım_Formu2022-12-18_03_59_48.xlsx')
+df12 = pd.read_excel('/content/L-Oréal_Oturumu_Katılım_Form2022-12-18_05_23_50.xlsx')
+
+#Removing unnecessary rows
+df1.drop('Submission Date',axis=1,inplace= True)
+df2.drop('Submission Date',axis=1,inplace= True)
+df3.drop('Submission Date',axis=1,inplace= True)
+df4.drop('Submission Date',axis=1,inplace= True)
+df5.drop('Submission Date',axis=1,inplace= True)
+df6.drop('Submission Date',axis=1,inplace= True)
+df7.drop('Submission Date',axis=1,inplace= True)
+df8.drop('Submission Date',axis=1,inplace= True)
+df9.drop('Submission Date',axis=1,inplace= True)
+df10.drop('Submission Date',axis=1,inplace= True)
+df11.drop('Submission Date',axis=1,inplace= True)
+df12.drop('Submission Date',axis=1,inplace= True)
+
+#Preparing to match uniques
+df1['Ad'] = df1['Ad'].str.lower()
+df1['Soyad'] = df1['Soyad'].str.lower()
+df1['full_name'] = df1['Ad']+' '+df1['Soyad']
+df1['full_name'] = df1['full_name'].str.replace(' ','')
+
+
+
+df2['Ad'] = df2['Ad'].str.lower()
+df2['Soyad'] = df2['Soyad'].str.lower()
+df2['full_name'] = df2['Ad']+' '+df2['Soyad']
+df2['full_name'] = df2['full_name'].str.replace(' ','')
+
+
+df3['Ad'] = df3['Ad'].str.lower()
+df3['Soyad'] = df3['Soyad'].str.lower()
+df3['full_name'] = df3['Ad']+' '+df3['Soyad']
+df3['full_name'] = df3['full_name'].str.replace(' ','')
+
+
+df4['Ad'] = df4['Ad'].str.lower()
+df4['Soyad'] = df4['Soyad'].str.lower()
+df4['full_name'] = df4['Ad']+' '+df4['Soyad']
+df4['full_name'] = df4['full_name'].str.replace(' ','')
+
+
+df5['Ad'] = df5['Ad'].str.lower()
+df5['Soyad'] = df5['Soyad'].str.lower()
+df5['full_name'] = df5['Ad']+' '+df5['Soyad']
+df5['full_name'] = df5['full_name'].str.replace(' ','')
+
+
+df6['Ad'] = df6['Ad'].str.lower()
+df6['Soyad'] = df6['Soyad'].str.lower()
+df6['full_name'] = df6['Ad']+' '+df6['Soyad']
+df6['full_name'] = df6['full_name'].str.replace(' ','')
+
+
+df7['Ad'] = df7['Ad'].str.lower()
+df7['Soyad'] = df7['Soyad'].str.lower()
+df7['full_name'] = df7['Ad']+' '+df7['Soyad']
+df7['full_name'] = df7['full_name'].str.replace(' ','')
+
+
+df8['Ad'] = df8['Ad'].str.lower()
+df8['Soyad'] = df8['Soyad'].str.lower()
+df8['full_name'] = df8['Ad']+' '+df8['Soyad']
+df8['full_name'] = df8['full_name'].str.replace(' ','')
+
+df9['Ad'] = df9['Ad'].str.lower()
+df9['Soyad'] = df9['Soyad'].str.lower()
+df9['full_name'] = df9['Ad']+' '+df9['Soyad']
+df9['full_name'] = df9['full_name'].str.replace(' ','')
+
+df10['Ad'] = df10['Ad'].str.lower()
+df10['Soyad'] = df10['Soyad'].str.lower()
+df10['full_name'] = df10['Ad']+' '+df10['Soyad']
+df10['full_name'] = df10['full_name'].str.replace(' ','')
+
+df11['Ad'] = df11['Ad'].str.lower()
+df11['Soyad'] = df11['Soyad'].str.lower()
+df11['full_name'] = df11['Ad']+' '+df11['Soyad']
+df11['full_name'] = df11['full_name'].str.replace(' ','')
+
+df12['Ad'] = df12['Ad'].str.lower()
+df12['Soyad'] = df12['Soyad'].str.lower()
+df12['full_name'] = df12['Ad']+' '+df12['Soyad']
+df12['full_name'] = df12['full_name'].str.replace(' ','')
+
+#Eliminating duplicate values
+df1.drop_duplicates(keep='first',inplace=True)
+df2.drop_duplicates(keep='first',inplace=True)
+df3.drop_duplicates(keep='first',inplace=True)
+df4.drop_duplicates(keep='first',inplace=True)
+df5.drop_duplicates(keep='first',inplace=True)
+df6.drop_duplicates(keep='first',inplace=True)
+df7.drop_duplicates(keep='first',inplace=True)
+df8.drop_duplicates(keep='first',inplace=True)
+df9.drop_duplicates(keep='first',inplace=True)
+df10.drop_duplicates(keep='first',inplace=True)
+df11.drop_duplicates(keep='first',inplace=True)
+df12.drop_duplicates(keep='first',inplace=True)
+
+#Dropping unnecessary features
+df1.drop(['Ad','Soyad'],axis=1,inplace=True)
+df2.drop(['Ad','Soyad'],axis=1,inplace=True)
+df3.drop(['Ad','Soyad'],axis=1,inplace=True)
+df4.drop(['Ad','Soyad'],axis=1,inplace=True)
+df5.drop(['Ad','Soyad','Akşamki After Partiye geliyor musunuz?'],axis=1,inplace=True)
+df6.drop(['Ad','Soyad'],axis=1,inplace=True)
+df7.drop(['Ad','Soyad'],axis=1,inplace=True)
+df8.drop(['Ad','Soyad'],axis=1,inplace=True)
+df9.drop(['Ad','Soyad'],axis=1,inplace=True)
+df10.drop(['Ad','Soyad'],axis=1,inplace=True)
+df11.drop(['Ad','Soyad'],axis=1,inplace=True)
+df12.drop(['Ad','Soyad'],axis=1,inplace=True)
+
+#Notating value "1" to calculate attendance ratio
+df1['attend'], df2['attend'],df3['attend'],df4['attend'],df5['attend'],df6['attend'],df7['attend'],df8['attend'],df9['attend'],df10['attend'],df11['attend'],df12['attend'] = 1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
+
+#Labeling columns
+df1.columns = ['fullname_1','attendance_1']
+df2.columns = ['fullname_2','attendance_2']
+df3.columns = ['fullname_3','attendance_3']
+df4.columns = ['fullname_4','attendance_4']
+df5.columns = ['fullname_5','attendance_5']
+df6.columns = ['fullname_6','attendance_6']
+df7.columns = ['fullname_7','attendance_7']
+df8.columns = ['fullname_8','attendance_8']
+
+#Setting new index dataframes to match among dataframes
+df1.set_index('fullname_1',inplace = True)
+df2.set_index('fullname_2',inplace = True)
+df3.set_index('fullname_3',inplace = True)
+df4.set_index('fullname_4',inplace = True)
+df5.set_index('fullname_5',inplace = True)
+df6.set_index('fullname_6',inplace = True)
+df7.set_index('fullname_7',inplace = True)
+df8.set_index('fullname_8',inplace = True)
+df9.set_index('full_name',inplace = True)
+df10.set_index('full_name',inplace = True)
+df11.set_index('full_name',inplace = True)
+df12.set_index('full_name',inplace = True)
+
+#Ensuring the unique index
+df1 = df1.loc[~df1.index.duplicated(keep='first')]
+df2 = df2.loc[~df2.index.duplicated(keep='first')]
+df3 = df3.loc[~df3.index.duplicated(keep='first')]
+df4 = df4.loc[~df4.index.duplicated(keep='first')]
+df5 = df5.loc[~df5.index.duplicated(keep='first')]
+df6 = df6.loc[~df6.index.duplicated(keep='first')]
+df7 = df7.loc[~df7.index.duplicated(keep='first')]
+df8 = df8.loc[~df8.index.duplicated(keep='first')]
+df9 = df9.loc[~df9.index.duplicated(keep='first')]
+df10 = df10.loc[~df10.index.duplicated(keep='first')]
+df11 = df11.loc[~df11.index.duplicated(keep='first')]
+df12 = df12.loc[~df12.index.duplicated(keep='first')]
+
+#Concating all dataframes
+df_tot = pd.concat([df1,df2,df3,df4,df5,df6,df7,df8,df9,df10,df11,df12],join='outer',axis=1)
+column = []
+
+#Relabeling Columns
+for i in range(1,len(df_tot.columns)+1):
+  column.append('session_'+str(i))
+df_tot.columns = column 
+
+df_tot.fillna(0,inplace=True) #Filling missing values with "0" to calculate score
+df_tot['percent'] = df_tot[df_tot.columns[:]].mean(axis=1,numeric_only=True)*100 #Creating new column for score
+df_tot.to_excel('Certificate_Sheet_GA_day1_1-0.xlsx')
+
+#Gmail merging
+
+#Reading excel sheets
+mail = pd.read_excel('/content/gmialler.xlsx')
+attend = pd.read_excel('/content/Certificate_Sheet_GA_day1_1-0 (11).xlsx')
+#New full name column to match with more accuracy
+mail['full_name'] = mail['name'] + mail['surname']
+mail['full_name'] = mail['full_name'].str.lower()
+mail['full_name'] = mail['full_name'].str.replace(' ','')
+
+#Getting rid of duplicate values
+mail.drop_duplicates(subset='mail',keep='last',inplace= True)
+mail.describe()
+
+#Labeling columns
+liste = []
+liste.append('full_name')
+for i in range(len(attend.columns)-1):
+  liste.append(attend.columns[i+1])
+attend.columns= liste
+attend.head()
+
+#Merging mails and names
+commondf=pd.merge(attend,mail)
+commondf.to_excel('mailled.xlsx')
